@@ -1,0 +1,58 @@
+.nav {
+    background: #333;
+}
+
+.logout {
+    margin-bottom: 0px;
+    margin-right: 20px;
+    /* padding:0px */
+}
+
+.title {
+    padding-bottom: 10px;
+    padding-top: 0px;
+    margin-top: -50px;
+}
+.customButton {
+    background: #333 !important;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 16px;
+    font-size: 1.6em;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.customButton:hover {
+    /* font-size: 20px; */
+    background: #00bfa5 !important;
+}
+
+
+.points-color  {
+    padding: 10;
+    color: #00bfa5 !important;
+    font-size: 20;
+}
+
+#teamNameColor {
+    color: #00bfa5 !important;
+}
+
+.x-axis path, .y-axis path, 
+.x-axis line, .y-axis line {
+    stroke: #ccc
+}
+
+.x-axis1 path, .y-axis1 path, 
+.x-axis1 line, .y-axis1 line {
+    stroke: #ccc
+}
+
+.x-axis text, .y-axis text {
+    fill: #ccc;
+    font-size: 14px;
+}
+
