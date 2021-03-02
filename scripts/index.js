@@ -197,6 +197,16 @@ moveMinutesForm.addEventListener('submit', (e) => {
 
   submittedCardio = parseInt(moveMinutesForm.cardioMinutes.value);
   submittedActive = parseInt(moveMinutesForm.activeMinutes.value);
+
+  if (Number.isNaN(submittedCardio)) {
+    submittedCardio = 0;
+  }
+
+  if (Number.isNaN(submittedActive)) {
+    submittedActive = 0;
+  }
+
+
   db.collection(userid).doc(selectedDate.toString()).set({
     date: selectedDate,
     dailyCardio: submittedCardio,

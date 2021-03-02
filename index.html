@@ -8,7 +8,10 @@
   <link rel="stylesheet" href="css/style.css">
   <!-- Import Google Icon Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
   <title>CTL Wellness Challenge</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png"/>
 </head>
 <body class="grey darken-3">
 
@@ -215,6 +218,10 @@
             <div class="row button-down">
                     <form  id="add-move-minutes-form">
                         <p class="flow-text grey-text center">- Enter move minutes below -</p>
+                          <!-- <p class="flow-text grey-text center">- (Please enter cardio & Active living at the same time)-</p>
+                          <p class="flow-text grey-text center">- If you make multiple entries for the same day it will mess up the stats -</p>
+                          <p class="flow-text grey-text center">- I'm working to fix this bug  -</p>
+                          <p class="flow-text grey-text center">-  if you have made multiple entries for the same day please email Bradon -</p> -->
                         <div class="row">
                           <input type="text" class="grey-text col s12 m3 " name="cardioMinutes" id="cardio-minutes" placeholder="Cardio/Strength Minutes" />
                           <input type="text" class="grey-text col s12 m3 offset-m1" id="active-living-minutes" name="activeMinutes" placeholder="Active Living Minutes" />
@@ -251,9 +258,21 @@
   <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
+      // Live API
       apiKey: "AIzaSyDLyl51AIvi_G6uHro-QBnB2EuqEDc-pTo",
       authDomain: "wellness-app-9d4e8.firebaseapp.com",
       projectId: "wellness-app-9d4e8",
+     
+      // Development API
+     // apiKey: "AIzaSyCyWKCdpsQQg2nGf54fWC4GLgnoFNtoRg0",
+     // authDomain: "develop-wellness.firebaseapp.com",
+     // projectId: "develop-wellness",
+
+      
+      
+      
+      
+      
       // Don't need below for this project
       // storageBucket: "wellness-app-9d4e8.appspot.com",
       // messagingSenderId: "223219659874",
