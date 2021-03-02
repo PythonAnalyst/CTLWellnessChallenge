@@ -13,6 +13,8 @@
     padding-top: 0px;
     margin-top: -50px;
 }
+
+
 .customButton {
     background: #333 !important;
     margin-bottom: 20px;
@@ -36,6 +38,13 @@
     color: #00bfa5 !important;
     font-size: 20;
 }
+
+.opp-points-color  {
+    padding: 10;
+    color: rgb(2019, 26, 26) !important;
+    font-size: 20;
+}
+
 
 #teamNameColor {
     color: #00bfa5 !important;
