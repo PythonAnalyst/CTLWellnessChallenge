@@ -6,10 +6,13 @@ const accountDetails = document.querySelector('.account-details');
 const ruleDetails = document.querySelector('.rule-details');
 const personalPoints = document.querySelector('.personal-points');
 const teamPoints = document.querySelector('.team-points');
+const opposingTeamPoints1 = document.querySelector('.opp-team-points1');
+const opposingTeamPoints2 = document.querySelector('.opp-team-points2');
 const ctlPoints = document.querySelector('.ctl-points');
 // const teamSelected = document.querySelector('#teamSelector');
 const moveMinutesForm = document.querySelector('#add-move-minutes-form');
 
+var teamList = ['Fighting Mongooses', 'Running While Winded', 'Sweet Sassy Molassy'];
 
 // Team Point Card (create before setupUI so I can pass this function to it)
 const setupTeamPoints = (user, userTeam) => {
@@ -25,6 +28,59 @@ const setupTeamPoints = (user, userTeam) => {
       <div>Active Living: <span  class="points-color">${teamActive}</span></div>
   `;
   teamPoints.innerHTML = html;
+  })
+ } else {
+   console.log('not logged in');
+ }
+};
+
+// Opposing Team Card 1
+const setupOpposingTeamPoints1 = (userTeam) => {
+  if (userTeam) {
+    let opposingTeamList = teamList.filter( function(value) {
+      return value !== userTeam
+    });
+    let opposingTeam1 = opposingTeamList[0];
+
+    db.collection('teams').doc(opposingTeam1).get().then(doc => {
+      let oppTeamEntries = doc.data().totalEntries;
+      let oppTeamCardio = doc.data().userTeamCardio;
+      let oppTeamActive = doc.data().userTeamActive;
+      const html = `
+      <span class="card-title opposingTeamColor">${opposingTeam1}</span>
+      <div>Total Entries: <span  class="opp-points-color">${oppTeamEntries}</span></div>
+      <div>Cardio / Strength: <span  class="opp-points-color">${oppTeamCardio}</span></div>
+      <div>Active Living: <span  class="opp-points-color">${oppTeamActive}</span></div>
+  `;
+  opposingTeamPoints1.innerHTML = html;
+  })
+ } else {
+   console.log('not logged in');
+ }
+};
+
+
+// Opposing Team Card 2
+const setupOpposingTeamPoints2  = (userTeam) => {
+  if (userTeam) {
+
+    let opposingTeamList = teamList.filter( function(value) {
+      return value !== userTeam
+    });
+    let opposingTeam2 = opposingTeamList[1];
+
+
+    db.collection('teams').doc(opposingTeam2).get().then(doc => {
+      let oppTeamEntries = doc.data().totalEntries;
+      let oppTeamCardio = doc.data().userTeamCardio;
+      let oppTeamActive = doc.data().userTeamActive;
+      const html = `
+      <span class="card-title opposingTeamColor">${opposingTeam2}</span>
+      <div>Total Entries: <span  class="opp-points-color">${oppTeamEntries}</span></div>
+      <div>Cardio / Strength: <span  class="opp-points-color">${oppTeamCardio}</span></div>
+      <div>Active Living: <span  class="opp-points-color">${oppTeamActive}</span></div>
+  `;
+  opposingTeamPoints2.innerHTML = html;
   })
  } else {
    console.log('not logged in');
@@ -47,6 +103,8 @@ const setupUI = (user) => {
         `;
         accountDetails.innerHTML = html;
         setupTeamPoints(user, userTeam);
+        setupOpposingTeamPoints1(userTeam);
+        setupOpposingTeamPoints2(userTeam);
       })
 
       // toggle user UI elements
@@ -178,3 +236,5 @@ moveMinutesForm.addEventListener('submit', (e) => {
 
 
 })
+
+
