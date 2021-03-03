@@ -1,4 +1,4 @@
-// DOM elements
+/// DOM elements
 const guideList = document.querySelector('.guides');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
@@ -12,7 +12,7 @@ const ctlPoints = document.querySelector('.ctl-points');
 // const teamSelected = document.querySelector('#teamSelector');
 const moveMinutesForm = document.querySelector('#add-move-minutes-form');
 
-var teamList = ['Fighting Mongooses', 'Running While Winded', 'Sweet Sassy Molassy'];
+var teamList = ['Fighting Mongooses', 'Run Like the Winded', 'Sweet Sassy Molassy'];
 
 // Team Point Card (create before setupUI so I can pass this function to it)
 const setupTeamPoints = (user, userTeam) => {
