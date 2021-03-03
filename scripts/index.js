@@ -155,15 +155,13 @@ const setupCtlPoints = (user) => {
       totalCTLCardio = doc.data().ctlCardio;
       totalCTLActive = doc.data().ctlActive;
       teamPercentComplete = ((totalCTLCardio + totalCTLActive) / CTLTeamGoal) *100; // *100 so it works with the d3 function
-      ctlProgressGoal(teamPercentComplete);
       const html = `
       <div>Total Entries:  <span  class="points-color">${totalCTLEntries}</span></div>
       <div>Cardio / Strength: <span  class="points-color">${totalCTLCardio}</span></div>
       <div>Active Living:  <span  class="points-color">${totalCTLActive}</span></div>
   `;
   ctlPoints.innerHTML = html;
-  console.log(teamPercentComplete);
-  ctlProgressGoal(teamPercentComplete);
+
   })
  } else {
    console.log('not logged in');

@@ -4,7 +4,6 @@
 	// "use strict";
 function ctlProgressGoal(teamPercentComplete) {
 	(function(){
-        console.log(`in function ${totalCTLCardio + totalCTLActive}`);
 		var gap = 2;
         // should be able to remove index because I only have one ring
 		var ranDataset = [ {index: 0, percentage: teamPercentComplete} ]; // TOME: percent is percent as who number 84% is 84 
