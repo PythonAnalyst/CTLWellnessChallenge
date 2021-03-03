@@ -146,23 +146,29 @@ const setupPersonalPoints = (user) => {
 // var totalCTLEntries;
 // var totalCTLCardio;
 // var totalCTLActive;
+var teamPercentComplete = 0;
 const setupCtlPoints = (user) => {
   if (user) {
     db.collection('CTL').doc('ctlData').get().then(doc => {
       totalCTLEntries = doc.data().ctlEntries;
       totalCTLCardio = doc.data().ctlCardio;
       totalCTLActive = doc.data().ctlActive;
+      teamPercentComplete = (totalCTLCardio + totalCTLActive) / 100
       const html = `
       <div>Total Entries:  <span  class="points-color">${totalCTLEntries}</span></div>
       <div>Cardio / Strength: <span  class="points-color">${totalCTLCardio}</span></div>
       <div>Active Living:  <span  class="points-color">${totalCTLActive}</span></div>
   `;
   ctlPoints.innerHTML = html;
+  ctlProgressGoal(teamPercentComplete)
   })
  } else {
    console.log('not logged in');
  }
 };
+
+
+
 
 
 // setup materialize components
