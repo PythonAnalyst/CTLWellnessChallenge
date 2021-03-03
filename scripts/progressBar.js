@@ -8,7 +8,7 @@ function ctlProgressGoal(teamPercentComplete) {
 		var gap = 2;
         // should be able to remove index because I only have one ring
 		var ranDataset = [ {index: 0, percentage: teamPercentComplete} ]; // TOME: percent is percent as who number 84% is 84 
-
+        console.log(ranDataset);
 
 
 		var colors = ["#00bfa5", "#a0ff03", "#1ad5de"];
@@ -112,7 +112,7 @@ function ctlProgressGoal(teamPercentComplete) {
 			// field.append("text").attr('class','icon');
 
 
-            field.append("text").attr('class','goal').text("OF 20,000").attr("transform","translate(0,15)");
+            field.append("text").attr('class','goal').text("OF 15,000").attr("transform","translate(0,15)");
             field.append("text").attr('class','completed').attr("transform","translate(0,0)");
 
             // this each was previously when there were three
@@ -147,10 +147,8 @@ function ctlProgressGoal(teamPercentComplete) {
             // set the goal (20,000) and then return the goal number with comma based on percent ... prob easier way to do this
             field.select("text.completed").text(function (d) {
                     
-                return Math.round(d.percentage /100 * 20000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",").replace();
+                return Math.round(d.percentage / 100 * 15000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",").replace();
             });
-
-
 
 
 			function arcTween(d) {
