@@ -9,6 +9,11 @@
   <!-- Import Google Icon Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+  <!-- For the progress bar -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+
   <title>CTL Wellness Challenge</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/favicon.png"/>
@@ -204,6 +209,13 @@
             </div>
           </div>
         </div>
+
+        <!-- Progress Bar -->
+        <div class="col s12 m6 l4 center">
+          <p class="flow-text grey-text center" id="ctl-points-goal">CTL Combined Points Goal</p>
+          <div class="canvas"></div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -259,24 +271,18 @@
     // Your web app's Firebase configuration
     var firebaseConfig = {
       // Live API
-      apiKey: "AIzaSyDLyl51AIvi_G6uHro-QBnB2EuqEDc-pTo",
-      authDomain: "wellness-app-9d4e8.firebaseapp.com",
-      projectId: "wellness-app-9d4e8",
+     apiKey: "AIzaSyDLyl51AIvi_G6uHro-QBnB2EuqEDc-pTo",
+     authDomain: "wellness-app-9d4e8.firebaseapp.com",
+     projectId: "wellness-app-9d4e8",
      
       // Development API
-     // apiKey: "AIzaSyCyWKCdpsQQg2nGf54fWC4GLgnoFNtoRg0",
-     // authDomain: "develop-wellness.firebaseapp.com",
-     // projectId: "develop-wellness",
+      // apiKey: "AIzaSyCyWKCdpsQQg2nGf54fWC4GLgnoFNtoRg0",
+      // authDomain: "develop-wellness.firebaseapp.com",
+      // projectId: "develop-wellness",
 
       
       
-      
-      
-      
-      // Don't need below for this project
-      // storageBucket: "wellness-app-9d4e8.appspot.com",
-      // messagingSenderId: "223219659874",
-      // appId: "1:223219659874:web:bdf9b6b5b5f73b8d194d3b" 
+
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
@@ -292,6 +298,11 @@
 
 
   <!-- Compiled and minified JavaScript -->
+
+  <!-- https://codepen.io/mrwilly/pen/bVqZoR -->
+  <script src="https://cdn.rawgit.com/bm-w/d3/master/d3.js"></script>
+  <script src="scripts/progressBar.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="scripts/auth.js"></script>
   <script src="scripts/index.js"></script>
@@ -299,3 +310,18 @@
 
 </body>
 </html>
+<!-- Git walk through starting 1:43-->
+<!-- 
+view
+command pallet
+git: checkout too..
+create new branch
+set name
+push changes to github by clicking little cloud bottom left 
+click on the git symbol on left toolbar 
+name changes 
+click check mark
+push to github cirles bottom left
+
+ -->
+<!-- https://www.youtube.com/watch?v=S7TbHDN8EXA&list=LL&index=1 -->
