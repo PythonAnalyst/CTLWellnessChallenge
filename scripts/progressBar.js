@@ -2,7 +2,6 @@
 	//apple design:https://images.apple.com/watch/features/images/fitness_large.jpg
       // code modified from https://codepen.io/mrwilly/pen/bVqZoR 
 	// "use strict";
-console.log('running progress bar script');
 function ctlProgressGoal(teamPercentComplete) {
 	(function(){
 		var gap = 2;
