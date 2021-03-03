@@ -147,20 +147,23 @@ const setupPersonalPoints = (user) => {
 // var totalCTLCardio;
 // var totalCTLActive;
 var teamPercentComplete = 0;
+var CTLTeamGoal = 15000;
 const setupCtlPoints = (user) => {
   if (user) {
     db.collection('CTL').doc('ctlData').get().then(doc => {
       totalCTLEntries = doc.data().ctlEntries;
       totalCTLCardio = doc.data().ctlCardio;
       totalCTLActive = doc.data().ctlActive;
-      teamPercentComplete = (totalCTLCardio + totalCTLActive) / 100
+      teamPercentComplete = ((totalCTLCardio + totalCTLActive) / CTLTeamGoal) *100; // *100 so it works with the d3 function
+      ctlProgressGoal(teamPercentComplete);
       const html = `
       <div>Total Entries:  <span  class="points-color">${totalCTLEntries}</span></div>
       <div>Cardio / Strength: <span  class="points-color">${totalCTLCardio}</span></div>
       <div>Active Living:  <span  class="points-color">${totalCTLActive}</span></div>
   `;
   ctlPoints.innerHTML = html;
-  ctlProgressGoal(teamPercentComplete)
+  console.log(teamPercentComplete);
+  ctlProgressGoal(teamPercentComplete);
   })
  } else {
    console.log('not logged in');
