@@ -161,6 +161,7 @@ const setupCtlPoints = (user) => {
       <div>Active Living:  <span  class="points-color">${totalCTLActive}</span></div>
   `;
   ctlPoints.innerHTML = html;
+  ctlProgressGoal(teamPercentComplete);
 
   })
  } else {
