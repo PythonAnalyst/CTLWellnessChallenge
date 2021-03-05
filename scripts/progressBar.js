@@ -3,6 +3,9 @@
       // code modified from https://codepen.io/mrwilly/pen/bVqZoR 
 	// "use strict";
 function ctlProgressGoal(teamPercentComplete) {
+
+	// need to remove (exit?) to not create duplicate charts everytime data is entered
+	d3.select(".canvas").selectAll("svg").remove();
 	(function(){
 		var gap = 2;
         // should be able to remove index because I only have one ring
@@ -14,6 +17,8 @@ function ctlProgressGoal(teamPercentComplete) {
 				τ = 2 * Math.PI;
 
 		function build(dataset){
+
+			
 
             // Ring width
 			var arc = d3.svg.arc()
