@@ -69,7 +69,6 @@ const setupOpposingTeamPoints2  = (userTeam) => {
     });
     let opposingTeam2 = opposingTeamList[1];
 
-
     db.collection('teams').doc(opposingTeam2).get().then(doc => {
       let oppTeamEntries = doc.data().totalEntries;
       let oppTeamCardio = doc.data().userTeamCardio;
